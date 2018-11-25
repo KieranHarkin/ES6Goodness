@@ -1,0 +1,39 @@
+<html>
+    <body>
+        
+        <div class="box open" style="width: 200px; height: 200px; border: 1px solid red;">
+
+        </div>
+
+        <script>
+            const box = document.querySelector('.box');
+            // Using function ensures that this refers to div
+            box.addEventListener('click', function() {
+                console.log(this);
+                
+                // What if we wanted to add a class to the div after 1second?
+                
+                // because function is not bound to anything this refers to global object (window)
+                setTimeout(function() {
+                    this.classList.toggle('open');
+                    // console.log(this);
+                }, 1000);
+
+                
+                // this works because the arrow function inherits this, therefore it will reference the div
+                setTimeout(() => {
+                    this.classList.toggle('open');
+                    // console.log(this);
+                }, 1000);
+
+            });
+
+            // Using arrow function here means that this refers to global object (window)
+            box.addEventListener('click', () => {
+                console.log(this);
+            });
+
+        
+        </script>        
+    </body>
+</html>
