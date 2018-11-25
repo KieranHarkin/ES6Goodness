@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+        .highlight {
+            background: yellow;
+        }
+        </style>
+    </head>
+    <body>
+        <script>
+        
+        function highlight(strings, ...values) {
+            let str = '';
+            strings.forEach((string, i) => {
+                str += `${string} <span class="highlight">${values[i] || '' } </span>`;
+            });
+            return str;
+        }
+        
+        const name = 'Sonic';
+        const age = 100;
+
+        const sentence = highlight`My hamsters name is ${name} and he is ${age} years old`;
+        document.body.innerHTML = sentence;
+        </script>
+    </body>
+</html>
