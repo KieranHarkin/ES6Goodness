@@ -1,0 +1,34 @@
+<html>
+    <body>
+        
+        <script>
+            
+            const players = [
+                {
+                    "name": "Ronaldo",
+                    "club": "Juventus"
+                },
+                {
+                    "name": "Messi",
+                    "club": "Barcelona"
+                },
+                {
+                    "name": "Neymar",
+                    "club": "PSG"
+                }
+            ];
+
+
+         const player = players.find(player => player.name === 'Ronaldo');
+         console.log(player);
+
+         const multiPlayers = players.filter(player => player.name === 'Ronaldo' || player.name === 'Messi');
+         console.log(multiPlayers); 
+
+         const neymarIndex = players.findIndex(player => player.name === 'Neymar');
+         console.log(neymarIndex);      
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <body>
+       
+    <div class="people">
+        <p>Ronaldo</p>
+        <p>Messi</p>
+        <p>Neymar</p>
+    </div>
+
+    <script>
+
+        // Array.from Example Start
+        const people = Array.from(document.querySelectorAll('.people p')); // Turns node list into array
+        const names = people.map(person => person.textContent);
+
+        //could also do
+        const people2 = Array.from(document.querySelectorAll('.people p'), person => {
+            return person.textContent;
+        });
+        console.log(people2);
+
+        // This doesn't work because arguments is not an array therefore no reduce function. It's an object
+        function sumAllNotWorking() {
+            return arguments.reduce((prev,next) => prev + next, 0);
+        };
+
+        // This does work because we convert to an array
+        function sumAllWorking() {
+            const nums = Array.from(arguments);
+            return nums.reduce((prev,next) => prev + next, 0);
+        }
+
+        // console.log(sumAllNotWorking(1, 2, 4, 6));
+        console.log(sumAllWorking(1, 2, 4, 6));
+        
+        // Array.from Example End
+
+        const ages = Array.of(12, 2, 3, 6);
+        console.log(ages);
+
+        // Array.of Example Start
+        
+
+        // Array.of Example End
+
+
+    </script>
+
+</body>
+
+</html>
