@@ -1,0 +1,46 @@
+<html>
+    <body>
+        
+        <div class="people">
+            <p>Ronaldo</p>
+            <p>Messi</p>
+            <p>Neymar</p>
+        </div>
+
+        <script>
+            // Can use Array.from or spread to turn into array
+            const people = [...document.querySelectorAll('.people p')];
+            const names = people.map(person => person.textContent);
+            console.log(names);
+
+            const deepDish = {
+                pizzaName: 'Deep Dish',
+                size: 'Medium',
+                ingredients: ['Marinara', 'Italian Sasuage', 'Dough', 'Cheese']
+            };
+
+            const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
+            console.log(shoppingList);
+
+
+            const comments = [
+                {id: 20129, text: 'I love your dog'},
+                {id: 10212, text: 'Nice job!'},
+                {id: 10652, text: 'You Suck!'},
+                {id: 12173, text: 'Good Work'}
+            ];
+
+            const id = 10652;
+            const commentIndex = comments.findIndex(comment => comment.id === 10652);
+            console.log(commentIndex);
+
+            // Delete rude comment
+            const newComments = [comments.slice(0, commentIndex), comments.slice(commentIndex+1)]
+            console.log(newComments); // This gives an array of arrays
+            const newCommentsSpread = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex+1)];
+            console.log(newCommentsSpread); // This gives and array of comments
+
+
+        </script>
+    </body>
+</html>
