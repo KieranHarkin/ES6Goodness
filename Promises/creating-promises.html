@@ -1,0 +1,15 @@
+<html>
+    <body>  
+        <script>
+            
+            const p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Promise resolved');
+                }, 1000);
+            });
+
+            p.then(data => console.log(data));
+
+        </script>
+    </body>
+</html>
