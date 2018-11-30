@@ -1,0 +1,35 @@
+<html>
+
+<body>
+    
+    <script>
+
+        class MovieCollection extends Array {
+
+            constructor(name, ...items) {
+                super(...items);
+                this.name = name;
+            }
+
+            add(movie) {
+                this.push(movie);
+            }
+
+            topRated(limit) {
+                return this.sort((a,b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+            }
+
+        }
+    
+        const movies = new MovieCollection('Harko\'s favourites',
+            {name: 'Polar Express', stars: 10},
+            {name: '300', stars: 9},
+            {name: 'das boot', stars: 8}        
+        );
+
+        movies.add({name: 'Home Alone', stars: 7});
+
+
+    </script>
+</body>
+</html>

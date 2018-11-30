@@ -1,0 +1,46 @@
+<html>
+    <body>
+        
+        <script>
+        
+        class Dog {
+            constructor(name, breed) {
+                this.name = name;
+                this.breed = breed;
+            }
+
+            bark() {
+                console.log(`Bark Bark! My name is ${this.name}`);
+            }
+
+            cuddle() {
+                console.log(`Love a good cuddle`);
+            }
+
+            // This lives on Dog and not on the instances
+            static info() {
+                console.log("Dogs are better than cats!");
+            }
+
+            get description() {
+                return console.log(`Name is ${this.name} Breed is = ${this.breed}`);
+            }
+
+            set nicknames(value) {
+                this.nick = value.trim();
+            }
+
+            get nicknames() {
+                return this.nick.toUpperCase();
+            }
+        }
+
+        const setanta = new Dog("Setanta", "Irish Wolf");
+        setanta.nicknames = "    test  ";
+        console.log(setanta.nicknames);
+
+        
+
+        </script>
+    </body>
+</html>
