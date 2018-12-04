@@ -1,0 +1,21 @@
+<html>
+    <body>
+        
+        <script>
+        
+
+            function* lyrics() {
+                yield `He makes it fast with one more thing`;
+                yield `We are the sultans`;
+                yield `We are the sultans of swing`;
+            };
+
+            const sultans = lyrics();
+
+            for(const line of sultans) {
+                console.log(line);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<body>
+    
+    <script>
+    
+        const inventors = [
+            {first: 'Albert', last: 'Einstein', year: 1879},
+            {first: 'Isaac', last: 'Newton', year: 1643},
+            {first: 'Max', last: 'Planck', year: 1858}
+        ];
+
+        function* loop(arr) {
+            console.log(inventors);
+            for(const item of arr) {
+                yield item;
+            }
+        }
+
+        const inventorGen = loop(inventors);
+
+
+    
+    </script>
+</body>
+</html>
