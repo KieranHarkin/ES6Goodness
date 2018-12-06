@@ -1,0 +1,30 @@
+<html>
+    <body>
+        
+        <video controls class='handsome'></video>
+
+        <script>
+        
+            // const res = fetch('https://api.github.com/users/kieranharkin').then(res => {
+            //     return res.json();
+            // }).then(res => {
+            //     console.log(res);
+            // }).catch(err => {
+            //     console.error('error');
+            // });
+
+            const video  = document.querySelector('.handsome');
+
+            navigator.mediaDevices.getUserMedia({video: true}).then(mediaStream => {
+                console.log(mediaStream);
+                video.srcObject = mediaStream;
+                video.load();
+                video.play();
+            });
+
+
+
+
+        </script>
+    </body>
+</html>

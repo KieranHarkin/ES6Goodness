@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // callback hell!
+        // breathe(1000, function() {
+        //     breathe(2000, function() {
+
+        //     });
+        // });
+
+        function breathe(amount) {
+            return new Promise((resolve, reject) => {
+                if (amount < 500) {
+                    reject('That is too small value');
+                }
+                setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+            });
+        }
+        
+        breathe(1000).then(res => {
+            console.log(res);
+            return breathe(500);
+        }).then(res => {
+            console.log(res)
+            return breathe(200);
+        }).then(res => {
+            console.log(res);
+        }).catch(error => {
+            console.error(error);
+        });
+
+    </script>
+</body>
+</html>
