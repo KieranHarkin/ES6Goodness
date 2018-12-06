@@ -1,0 +1,19 @@
+
+<html>
+    <body>
+        
+
+        <script>
+            let player1 = {name: 'Ronaldo', team: 'Juventus'};
+            let player2 = {name: 'Messi', team: 'FC Barcelona'};
+
+            const weakSetExample = new WeakSet([player1, player2]);
+
+            console.log(weakSetExample);
+
+            player1 = null;
+
+            console.log(weakSetExample);
+        </script>
+    </body>
+</html>
